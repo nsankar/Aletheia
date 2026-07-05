@@ -1,0 +1,55 @@
+# autotune-config.toml — ALL configuration for the offline statistical recalibration pass
+# (scripts/autotune.py). The script carries NO default values: every key here is required,
+# and a missing key is a hard ConfigError. Edit values here, never in code.
+# Relative paths resolve against the working directory (run the tuner from the repo root).
+
+schema_version = 1            # must match trace-schema.md records; mismatch = refuse to run
+
+[trigger]
+min_completed_runs = 10       # N: how many completed runs make a tuning cycle eligible
+inconclusive_weight = 1.0     # how much an INCONCLUSIVE run counts toward N (0.5 = half)
+
+[paths]
+# Central telemetry spool: every investigation appends its trace here regardless of which
+# folder the chat ran in — this is what makes hands-free tuning see all sessions. (`~` ok.)
+runs_dir         = "~/.claude/aletheia-runs"
+archive_dir      = "~/.claude/aletheia-runs/archive"
+reports_dir      = "runs/tuning-reports"
+trace_glob       = "trace-*.jsonl"
+prior_file       = ".claude/skills/aletheia/reference/environment-prior.md"
+ledger_file      = "docs/Aletheia-loop-engg.md"     # tuning ledger table at the bottom
+user_install_dir = "~/.claude/skills/aletheia"      # for the post-apply sync reminder
+
+[em]
+max_iterations         = 200
+convergence_tol        = 1e-6   # stop when max |delta reliability| between iterations is below this
+shrinkage_pseudo_count = 40     # Beta-prior strength: pseudo-votes anchored at current reliability
+min_observations       = 5      # sensors with fewer votes in the corpus are skipped
+
+[clamps]
+max_reliability_delta = 0.05    # per sensor, per cycle
+max_threshold_delta   = 0.03    # (thresholds are report-only in v1; kept for the A-prime layer)
+reliability_floor     = 0.55    # absolute bounds a fit may never leave
+reliability_ceiling   = 0.98
+
+[gates]                          # ALL must pass before `apply` writes anything
+require_replay_dominance  = true
+require_pytest            = true
+pytest_command            = "python -m pytest tests/ -q"
+max_mean_confidence_shift = 0.0  # upward mean replayed-confidence shift allowed (invariant)
+acceptance_fixtures       = ["A1", "A2", "H1"]
+fixtures_dir              = "tests/fixtures"
+acceptance_criteria_file  = "tests/fixtures/acceptance.json"
+
+[voi_audit]
+undershoot_flag_ratio = 0.6      # cumulative realized/predicted below this => flag sensor
+min_observations      = 5
+
+[reports]
+keep_last = 20                   # tuning-report retention in reports_dir
+
+[automation]                     # hands-free cycle (SessionEnd hook -> autotune_cycle.py)
+enabled            = true        # false = hook becomes a no-op; manual tuning still works
+auto_sync          = true        # after an applied change, sync the user-wide install copy
+min_interval_hours = 6           # throttle: at most one full cycle attempt per this window
+marker_file        = "~/.claude/aletheia-runs/.last-cycle"   # throttle timestamp

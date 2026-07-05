@@ -1,0 +1,10 @@
+runs/*
+!runs/.gitkeep
+__pycache__/
+*.pyc
+.pytest_cache/
+dist/
+.claude/settings.local.json
+.DS_Store
+# Local/private project material
+/protected/
