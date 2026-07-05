@@ -203,19 +203,6 @@ After enough runs accumulate, an offline tuning cycle may propose small adjustme
 
 You can run the cycle manually or enable the optional Claude Code session-end hook described in the **[User Guide](docs/USER-GUIDE.md)**. The implementation and safety gates are documented in the **[auto-tuner proposal](docs/auto-tuner-workflow-proposal.md)** and **[recalibration plan](docs/statistical-recalibration-implementation-plan.md)**.
 
-## 🧠 How it works under the hood
-
-Curious how the loop, the math, and the tuning actually fit together? These go deep:
-
-- **[POMDP-Loop Agentic Blueprint](docs/POMDP-Loop-Agentic-Blueprint.md)** — the design and the
-  research it builds on; Part 7 records what shipped vs. the original plan.
-- **[Loop-engineering field guide](docs/Aletheia-loop-engg.md)** — the loop's anatomy, every
-  tunable knob, and the tuning ledger.
-- **[Auto-tuner proposal](docs/auto-tuner-workflow-proposal.md)** & **[implementation plan](docs/statistical-recalibration-implementation-plan.md)**
-  — how self-tuning stays honest (EM recalibration + deterministic replay gates).
-- **[Acceptance runs](tests/scenarios.md)** & **[the 9-case adversarial battery](tests/hard-cases.md)**
-  — where the loop earns its keep against traps a summarizer fails.
-
 ## 🗺️ What's in here
 
 ```text
