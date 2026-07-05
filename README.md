@@ -1,5 +1,7 @@
 <div align="center">
 
+<img src="assets/aletheia-banner.png" alt="Aletheia — The Uncertainty Loop" width="100%"/>
+
 # 🔭 Aletheia — *The Uncertainty Loop*
 
 **An AI investigator that knows what it doesn't know — and proves it.**
