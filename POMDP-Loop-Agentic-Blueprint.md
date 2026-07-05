@@ -20,7 +20,7 @@
 - [Part 4 — Demo recipe (Claude Code desktop app)](#part-4)
 - [Part 5 — Build & verification checklist](#part-5)
 - [Part 6 — Test scenarios & input queries](#part-6)
-- [Part 7 — Improvements made (implementation delta, July 2026)](#part-7)
+- [Part 7 — Improvements made (implementation delta)](#part-7)
 - [Sources](#sources)
 
 ---
@@ -792,11 +792,11 @@ Each scenario gives a **verbatim query** to paste into the Claude Code desktop c
 ---
 
 <a name="part-7"></a>
-## Part 7 — Improvements made (implementation delta, July 2026)
+## Part 7 — Improvements made (implementation delta)
 
-> Parts 0–6 above are preserved as the original design record (2026‑07‑01). This part
+> Parts 0–6 above are preserved as the original design record. This part
 > documents where the **built system** (Idea 1, Aletheia — this repo) corrected, hardened,
-> or exceeded that design during implementation, 2026‑07‑02 → 07‑04. Every item below is
+> or exceeded that design during implementation. Every item below is
 > shipped and test‑verified unless marked otherwise. Details live in the working docs:
 > `tests/scenarios.md`, `tests/hard-cases.md`, `Aletheia-loop-engg.md`,
 > `auto-tuner-workflow-proposal.md`, `statistical-recalibration-implementation-plan.md`,
@@ -915,4 +915,4 @@ second, offline loop reduces uncertainty about **Aletheia's own parameters**:
 
 ---
 
-*Blueprint generated 2026‑07‑01. The POMDP loop kernel (Part 1) is shared; each business is a different `AGENTS.md` prior + action type over that kernel. Part 7 added 2026‑07‑04, recording the implementation delta for Idea 1 (Aletheia) — Parts 0–6 are intentionally preserved as the original design record.*
+*The POMDP loop kernel (Part 1) is shared; each business is a different `AGENTS.md` prior + action type over that kernel. Part 7 records the implementation delta for Idea 1 (Aletheia) — Parts 0–6 are intentionally preserved as the original design record.*

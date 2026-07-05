@@ -49,7 +49,7 @@ This is the auto-tuner's constitution-equivalent, and it is not tunable.
 
 ```json
 {
-  "run_id": "…", "turn": 2, "ts": "2026-07-02T09:41:00Z",
+  "run_id": "…", "turn": 2, "ts": "2026-01-15T09:41:00Z",
   "question_dims": ["D0", "D1"],
   "sensor": "search:customer_evidence",
   "query": "<the instantiated query_template>",
@@ -228,7 +228,7 @@ the AGENTS.md text: one bullet for A, the longest bullet for B.
 
 ## 9. Implementation checklist (track per phase; update in place)
 
-### Phase 1 — Trace schema v1 ✅ (implemented 2026-07-03)
+### Phase 1 — Trace schema v1 ✅ (implemented)
 - [x] `reference/trace-schema.md` created (schema carries `schema_version: 1`; turn-1 rule:
   starting prior recorded for every question dimension so all-null runs stay replayable)
 - [x] SKILL.md §0 gains exactly **one** pointer (existing telemetry line extended — bloat guard held)
@@ -237,7 +237,7 @@ the AGENTS.md text: one bullet for A, the longest bullet for B.
   traces (`tests/fixtures/trace-*.jsonl`), floats computed by `pomdp_belief` itself
 - [x] G3 exercised: A2's three null turns and H1's null turn appear in the traces unshaped
 
-### Phase 2 — Replay harness (`autotune.py replay`) ✅ (implemented 2026-07-03)
+### Phase 2 — Replay harness (`autotune.py replay`) ✅ (implemented)
 - [x] Determinism: champion replay of all three fixtures reproduces every recorded posterior
   exactly (`max_deviation_vs_recorded = 0.0`; `test_replay_reproduces_recorded_runs`)
 - [x] Sensitivity smoke: weakening a sensor delays commitment as expected (`test_replay_sensitivity_smoke`)
@@ -245,7 +245,7 @@ the AGENTS.md text: one bullet for A, the longest bullet for B.
 - [x] Replay available for evaluating hand tunes (`replay --proposal <file>` emits the full
   dominance report — referenced from the field guide's workflow)
 
-### Phase 3 — Statistical pass (`autotune.py fit`, Approach A) ✅ (implemented 2026-07-03)
+### Phase 3 — Statistical pass (`autotune.py fit`, Approach A) ✅ (implemented)
 - [x] EM + Beta-shrinkage implemented; recovers planted reliabilities on synthetic corpora
   (`test_em_recovers_planted_reliabilities`); shrinkage-damps + clamp-bounds verified
 - [x] Clamp test: out-of-range fit clipped and the clip logged (`test_clamp_clips_and_logs`)

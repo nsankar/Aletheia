@@ -9,7 +9,7 @@ or calibrated abstention — is the thing that prevents the failure.
 **How to run:** paste the query verbatim into a fresh session (project or user-wide install)
 and grade the Verdict against the pass criteria. Do not hint at the mechanism.
 
-**Grounding:** H1, H2/H3, and H9 were researched live on 2026-07-02 (sources at the bottom);
+**Grounding:** H1, H2/H3, and H9 were researched live (sources at the bottom);
 their trap structure is real, not hypothetical. **H1 has additionally been executed as a live
 acceptance run** (full transcript inside H1 below), the same way A1 was run in
 [`scenarios.md`](scenarios.md). H4–H6 and H8 are built on real situations that move with the
@@ -43,7 +43,7 @@ premise is that reliability is conditional on the evidence being faithful, not m
 - Misrepresentation is framed per I10 (reported allegations by named outlets / the companies
   themselves), never as the agent's own accusation of fraud.
 
-### ✅ LIVE ACCEPTANCE RUN (executed 2026-07-02)
+### ✅ LIVE ACCEPTANCE RUN
 
 Run exactly as A1 was: every turn a real WebSearch from a named sensor's `query_template`
 (`{entity}` = 11x, canonical `11x.ai`), every posterior the exact output of
@@ -324,7 +324,7 @@ updates on observations does it by construction.
 
 ---
 
-## Sources (research pass, 2026-07-02)
+## Sources (research pass)
 
 - 11x customer-claim dispute: [TechCrunch](https://techcrunch.com/2025/03/24/a16z-and-benchmark-backed-11x-has-been-claiming-customers-it-doesnt-have/) (ZoomInfo/Airtable denials, ~$10M claimed vs ~$3M retained ARR).
 - CoreWeave two-sided picture: [The Motley Fool](https://www.fool.com/investing/2026/04/03/coreweave-stock-growth-debt-big-risk/), [IndexBox summary](https://www.indexbox.io/blog/coreweaves-2025-revenue-hits-51b-amid-21b-debt-and-customer-risks/), [CoreWeave 8-K filings](https://www.sec.gov/Archives/edgar/data/0001769628/000176962826000094/coreweave4q25earningspress.htm) ($5.1B FY25 revenue, ~$21B debt, ~67% Microsoft concentration, covenant analysis).

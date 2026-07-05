@@ -29,7 +29,7 @@ not a growing transcript but an explicit belief state that each observation upda
 coprocessor (`pomdp_belief.py`). The loop never runs "until it feels done" — it runs until a
 verifiable condition fires.
 
-**Field evidence (live runs, July 2026).** Three runs, three different stop reasons, none of
+**Field evidence (live runs).** Three runs, three different stop reasons, none of
 them vibes:
 - **A1 (Anthropic):** 5 turns — stopped on *floor cleared* for D1/D2 + *sensor exhaustion*
   on D0 (honest "leans real .74, below floor").
@@ -172,7 +172,7 @@ robocopy .claude\skills\aletheia "$env:USERPROFILE\.claude\skills\aletheia" /E /
 
 | Date | Change | Reason | Acceptance result |
 |---|---|---|---|
-| 2026-07-02 | Added `search:customer_evidence` (D0, 0.82) | D0 under-served; strongest traction evidence had no home | A1: D0 .38→.74 (honest, below floor); H1 live: pivotal disconfirming read; 16 tests green |
-| 2026-07-02 | Exhaustion gate: added explicit novelty branch (b) | A2's stop wasn't licensed by the repetition-only spec | A2 stop now spec-conformant at 3 turns |
-| 2026-07-03 | Auto-tuner Approach A implemented: `scripts/autotune.py` (status/replay/fit/apply/audit) + `reference/autotune-config.toml` + `reference/trace-schema.md` + fixtures | Proposal §6 Phases 1–3; no parameter values changed | 29 tests green; champion replay bit-exact (dev 0.0); full-gates `apply` proven on a prior copy (7/7 gates); real prior untouched |
-| 2026-07-04 | Hands-free automation: central telemetry spool (`~/.claude/aletheia-runs/`), `scripts/autotune_cycle.py` (throttled, quarantining, auto-syncing), user-level SessionEnd hook, `[automation]` config section, AGENTS.md automated-cycle + retention governance | "Only when you ask" fails non-technical/forgetful users; scattering fixed at source | 32 tests green (hook contract + master-guard tests); wrapper pipe-tested: silent/0.2s no-op, quarantine self-heal verified on the real nonconforming real-world trace |
+| — | Added `search:customer_evidence` (D0, 0.82) | D0 under-served; strongest traction evidence had no home | A1: D0 .38→.74 (honest, below floor); H1 live: pivotal disconfirming read; 16 tests green |
+| — | Exhaustion gate: added explicit novelty branch (b) | A2's stop wasn't licensed by the repetition-only spec | A2 stop now spec-conformant at 3 turns |
+| — | Auto-tuner Approach A implemented: `scripts/autotune.py` (status/replay/fit/apply/audit) + `reference/autotune-config.toml` + `reference/trace-schema.md` + fixtures | Proposal §6 Phases 1–3; no parameter values changed | 29 tests green; champion replay bit-exact (dev 0.0); full-gates `apply` proven on a prior copy (7/7 gates); real prior untouched |
+| — | Hands-free automation: central telemetry spool (`~/.claude/aletheia-runs/`), `scripts/autotune_cycle.py` (throttled, quarantining, auto-syncing), user-level SessionEnd hook, `[automation]` config section, AGENTS.md automated-cycle + retention governance | "Only when you ask" fails non-technical/forgetful users; scattering fixed at source | 32 tests green (hook contract + master-guard tests); wrapper pipe-tested: silent/0.2s no-op, quarantine self-heal verified on the real nonconforming real-world trace |

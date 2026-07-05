@@ -1,7 +1,7 @@
 # Aletheia — Acceptance Scenarios (blueprint §6.1, HANDOFF §8.3)
 
-A1 and A2 below are **real, live runs**: the searches were actually executed (WebSearch,
-July 2026) and the Bayes updates actually computed by
+A1 and A2 below are **real, live runs**: the searches were actually executed (WebSearch)
+and the Bayes updates actually computed by
 `.claude/skills/aletheia/scripts/pomdp_belief.py`, following the `aletheia` SKILL.md
 procedure by hand. A3 is a **scripted demonstration** (see note in that section for why).
 
@@ -244,7 +244,7 @@ VERDICT — Acme Corp "revenue reporting practices"
 > the loop moves in the **right direction** and **abstains when there is no evidence**, NOT
 > that "90%" is empirically right 90% of the time. A true calibration curve (does stated
 > confidence match hit-rate?) needs many multi-turn labeled runs and is recorded as a
-> fast-follow (see below). All searches were live (July 2026); all updates via `pomdp_belief.py`.
+> fast-follow (see below). All searches were live; all updates via `pomdp_belief.py`.
 
 | # | Case | Dimension(s) | Real-world ground truth | Loop's leaning | Direction / abstention correct? |
 |---|---|---|---|---|---|

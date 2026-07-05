@@ -420,7 +420,7 @@ Delete one folder:
 | No Python on the machine | Fine — everything still works; exact-math helper is skipped. |
 | Changed the skill but behavior didn't change | Re-copy to the skills folder, then start a new chat. |
 | Want it gone from one project but not others | User-wide install applies everywhere; either uninstall, or ask in that chat to not run investigations. |
-| Tuning never seems to happen | Normal until ~10 investigations have accumulated in `~\.claude\aletheia-runs\` — the cycle checks after your sessions and stands down silently below that. (Telemetry from before 2026-07-04 was written to each chat folder's `runs\`; move those `trace-*.jsonl` files into the central spool if you want them counted.) |
+| Tuning never seems to happen | Normal until ~10 investigations have accumulated in `~\.claude\aletheia-runs\` — the cycle checks after your sessions and stands down silently below that. (Telemetry from earlier sessions was written to each chat folder's `runs\`; move those `trace-*.jsonl` files into the central spool if you want them counted.) |
 | Tuning ran but changed nothing | Normal and honest: on small or well-behaved data the guards keep everything as-is. No news is a valid result — check the ledger if you're curious. |
 | Files appear in `aletheia-runs\quarantine\` | A malformed telemetry log was set aside automatically (never deleted) so it can't block tuning. Nothing to do; the affected investigation's verdict was unaffected. |
 | (Codex) Aletheia doesn't engage | `codex/AGENTS.md` must be the `AGENTS.md` at or above the folder Codex is working in — copy it to that folder's root, or launch Codex from `codex/`. Codex stops looking once it reaches your working directory. |
