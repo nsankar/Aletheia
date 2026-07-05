@@ -202,7 +202,7 @@ After enough runs accumulate, an offline tuning cycle may propose small adjustme
 
 > Tuning may make Aletheia cheaper, more consistent, or better calibrated—**never more confident without better evidence**.
 
-You can run the cycle manually or enable the optional Claude Code session-end hook described in the **[User Guide](docs/USER-GUIDE.md)**. The implementation and safety gates are documented in the **[auto-tuner proposal](docs/auto-tuner-workflow-proposal.md)** and **[recalibration plan](docs/statistical-recalibration-implementation-plan.md)**.
+You can run the cycle manually or enable the optional Claude Code session-end hook described in the **[User Guide](docs/USER-GUIDE.md)**.
 
 ## 🗺️ What's in here
 
