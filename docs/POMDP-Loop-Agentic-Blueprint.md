@@ -798,9 +798,9 @@ Each scenario gives a **verbatim query** to paste into the Claude Code desktop c
 > documents where the **built system** (Idea 1, Aletheia — this repo) corrected, hardened,
 > or exceeded that design during implementation. Every item below is
 > shipped and test‑verified unless marked otherwise. Details live in the working docs:
-> `tests/scenarios.md`, `tests/hard-cases.md`, `Aletheia-loop-engg.md`,
-> `auto-tuner-workflow-proposal.md`, `statistical-recalibration-implementation-plan.md`,
-> `USER-GUIDE.md`.
+> `tests/scenarios.md`, `tests/hard-cases.md`, `docs/Aletheia-loop-engg.md`,
+> `docs/auto-tuner-workflow-proposal.md`, `docs/statistical-recalibration-implementation-plan.md`,
+> `docs/USER-GUIDE.md`.
 
 ### 7.1 Product-level corrections to the design
 
@@ -890,14 +890,14 @@ second, offline loop reduces uncertainty about **Aletheia's own parameters**:
 
 - **Local user-wide deployment** (personal skills folder — one file copy, nothing
   published), master-vs-deployment-copy model with automated sync, and a non-technical
-  `USER-GUIDE.md` (install, query patterns, hard questions, hands-free tuning, off-switch).
+  `docs/USER-GUIDE.md` (install, query patterns, hard questions, hands-free tuning, off-switch).
 - **Domain generalization made explicit:** the Constitution and epistemic character are
   domain-neutral; only identity/scope + the sensor map define a domain. The guide ships
   re-domaining recipes (contractor diligence, viral science-claim triage) — each variant
   with its own spool, tuning independently.
 - **An operator field guide** with a
   symptom→knob tuning playbook and a shared human/machine tuning ledger
-  (`Aletheia-loop-engg.md`).
+  (`docs/Aletheia-loop-engg.md`).
 - **Compass (Idea 2): unchanged, blueprint-only** — tracked on the README roadmap.
 
 ---

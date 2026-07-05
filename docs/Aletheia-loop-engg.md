@@ -45,7 +45,7 @@ them vibes:
 ## 2. Loop configuration reference
 
 All loop knobs live in **one file** —
-[`environment-prior.md`](.claude/skills/aletheia/reference/environment-prior.md), the
+[`environment-prior.md`](../.claude/skills/aletheia/reference/environment-prior.md), the
 `Thresholds & Stopping Policy (TUNABLE)` block — deliberately separated from the governance
 layer so operators can tune without touching the Constitution.
 

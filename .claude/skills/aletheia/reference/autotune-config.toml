@@ -17,7 +17,7 @@ archive_dir      = "~/.claude/aletheia-runs/archive"
 reports_dir      = "runs/tuning-reports"
 trace_glob       = "trace-*.jsonl"
 prior_file       = ".claude/skills/aletheia/reference/environment-prior.md"
-ledger_file      = "Aletheia-loop-engg.md"          # tuning ledger table at the bottom
+ledger_file      = "docs/Aletheia-loop-engg.md"     # tuning ledger table at the bottom
 user_install_dir = "~/.claude/skills/aletheia"      # for the post-apply sync reminder
 
 [em]

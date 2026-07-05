@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """autotune.py — offline statistical recalibration for Aletheia (Approach A).
 
-Implements statistical-recalibration-implementation-plan.md:
+Implements docs/statistical-recalibration-implementation-plan.md:
   status  — corpus stats + trigger readiness
   replay  — deterministic re-computation of recorded traces (champion or candidate params)
   fit     — Dawid–Skene-style EM + Beta shrinkage + clamps -> proposal JSON (applies nothing)

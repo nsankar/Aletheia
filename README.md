@@ -133,7 +133,7 @@ Aletheia is **100% local** — a file copy, nothing published or uploaded. It ru
 | **Claude Cowork** | 🚧 Work in progress |
 
 **Setup — including install, first run, query patterns, re-domaining, and self-tuning — is in
-the → [User Guide](USER-GUIDE.md).** The 60-second version:
+the → [User Guide](docs/USER-GUIDE.md).** The 60-second version:
 
 - **Claude Code:** copy `.claude/skills/aletheia/` into `~/.claude/skills/`, open a new chat,
   and ask a plain question. It engages on intent — you never name a skill.
@@ -147,11 +147,11 @@ optional — the agent falls back to inline arithmetic).
 
 Curious how the loop, the math, and the tuning actually fit together? These go deep:
 
-- **[POMDP-Loop Agentic Blueprint](POMDP-Loop-Agentic-Blueprint.md)** — the design and the
+- **[POMDP-Loop Agentic Blueprint](docs/POMDP-Loop-Agentic-Blueprint.md)** — the design and the
   research it builds on; Part 7 records what shipped vs. the original plan.
-- **[Loop-engineering field guide](Aletheia-loop-engg.md)** — the loop's anatomy, every
+- **[Loop-engineering field guide](docs/Aletheia-loop-engg.md)** — the loop's anatomy, every
   tunable knob, and the tuning ledger.
-- **[Auto-tuner proposal](auto-tuner-workflow-proposal.md)** & **[implementation plan](statistical-recalibration-implementation-plan.md)**
+- **[Auto-tuner proposal](docs/auto-tuner-workflow-proposal.md)** & **[implementation plan](docs/statistical-recalibration-implementation-plan.md)**
   — how self-tuning stays honest (EM recalibration + deterministic replay gates).
 - **[Acceptance runs](tests/scenarios.md)** & **[the 9-case adversarial battery](tests/hard-cases.md)**
   — where the loop earns its keep against traps a summarizer fails.
@@ -163,9 +163,8 @@ Aletheia/
 ├─ AGENTS.md · CLAUDE.md          # governance (identity, the Constitution, engagement rules)
 ├─ .claude/skills/aletheia/       # the product: procedure, parameters, math helper, tuner
 ├─ codex/AGENTS.md                # self-contained OpenAI Codex build (generated)
-├─ USER-GUIDE.md                  # setup + how to use, for every harness
-├─ tests/                         # coprocessor math, confidentiality gate, acceptance fixtures
-└─ *.md                           # design & engineering deep-dives
+├─ docs/                          # user guide + design & engineering deep-dives
+└─ tests/                         # coprocessor math, confidentiality gate, acceptance fixtures
 ```
 
 ## ⚖️ What it is — and isn't
@@ -191,11 +190,11 @@ uncertainty? I'd love to hear it.
 
 ## 📚 References
 
-- **User Guide** — [USER-GUIDE.md](USER-GUIDE.md) · setup and usage for Claude Code & Codex
-- **The design** — [POMDP-Loop Agentic Blueprint](POMDP-Loop-Agentic-Blueprint.md)
-- **Loop engineering & tuning** — [Aletheia-loop-engg.md](Aletheia-loop-engg.md) ·
-  [auto-tuner proposal](auto-tuner-workflow-proposal.md) ·
-  [recalibration plan](statistical-recalibration-implementation-plan.md)
+- **User Guide** — [USER-GUIDE.md](docs/USER-GUIDE.md) · setup and usage for Claude Code & Codex
+- **The design** — [POMDP-Loop Agentic Blueprint](docs/POMDP-Loop-Agentic-Blueprint.md)
+- **Loop engineering & tuning** — [Aletheia-loop-engg.md](docs/Aletheia-loop-engg.md) ·
+  [auto-tuner proposal](docs/auto-tuner-workflow-proposal.md) ·
+  [recalibration plan](docs/statistical-recalibration-implementation-plan.md)
 - **Evidence** — [acceptance scenarios](tests/scenarios.md) ·
   [hard-case battery](tests/hard-cases.md)
 - **OpenAI Codex build** — [codex/README.md](codex/README.md)

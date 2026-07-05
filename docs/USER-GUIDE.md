@@ -79,7 +79,7 @@ plain "search and summarize" assistant gets wrong:
   (announcement numbers vs. filed numbers — it should tell you which is which)
 
 The full battery of nine, with what each one tests and how to grade the answers, is in
-[`tests/hard-cases.md`](tests/hard-cases.md).
+[`tests/hard-cases.md`](../tests/hard-cases.md).
 
 **Good to know**
 - A small `runs\` folder may appear in whatever folder the chat is working in — the
@@ -364,7 +364,7 @@ can dominate.
 Aletheia also runs in **OpenAI Codex** — same investigator, same protections. Codex reads
 `AGENTS.md` natively (it has no `CLAUDE.md` and no auto-loading skill), so the Codex build is
 **one self-contained file** that carries the governance *and* the full investigation
-procedure inlined. It's pre-built in this repo at **[`codex/AGENTS.md`](codex/AGENTS.md)**.
+procedure inlined. It's pre-built in this repo at **[`codex/AGENTS.md`](../codex/AGENTS.md)**.
 
 **Install (local, nothing published):**
 1. Make `codex/AGENTS.md` the file Codex loads for the session — either **copy it to the
