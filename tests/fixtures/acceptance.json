@@ -1,0 +1,15 @@
+{
+  "_comment": "Per-fixture expected outcomes for replay-dominance gating (proposal 5.3d). 'leading' = expected final leading value per dimension (null = must stay at the even prior). 'committed' = whether that dimension must clear BOTH stopping-gate conditions (confidence >= confidence_floor AND normalized entropy <= entropy_explore_above) under the candidate parameters.",
+  "A1": {
+    "D0": {"leading": "real", "committed": false},
+    "D1": {"leading": "healthy", "committed": true},
+    "D2": {"leading": "rising", "committed": true}
+  },
+  "A2": {
+    "D0": {"leading": null, "committed": false}
+  },
+  "H1": {
+    "D0": {"leading": "inflated", "committed": true},
+    "D1": {"leading": "healthy", "committed": true}
+  }
+}

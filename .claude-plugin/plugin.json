@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "aletheia",
+  "displayName": "Aletheia",
+  "version": "0.1.0",
+  "description": "Competitive & market-intelligence investigator: verifies whether a company's or market's claimed traction, funding, momentum, or pricing is real, and returns a calibrated verdict with an evidence trail and residual unknowns.",
+  "author": {
+    "name": "POMDP-Loop"
+  },
+  "license": "MIT",
+  "keywords": [
+    "competitive-intelligence",
+    "diligence",
+    "claim-verification",
+    "market-research",
+    "osint"
+  ],
+  "skills": "./.claude/skills/"
+}

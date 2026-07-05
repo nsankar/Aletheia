@@ -1,0 +1,6 @@
+# The belief coprocessor (.claude/skills/aletheia/scripts/pomdp_belief.py) is pure
+# stdlib — there are NO required dependencies.
+#
+# Optional: pomdp-py enables the library-backed belief path (identical numbers,
+# verified by tests/test_pomdp_belief.py). Needs a C toolchain to build on Windows.
+# pip install pomdp-py
