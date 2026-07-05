@@ -4,7 +4,7 @@
 
 # 🔭 Aletheia — *The Uncertainty Loop*
 
-**An AI investigator that knows what it doesn't know — and proves it.**
+**An AI investigator that earns its confidence.**
 
 *Built for investigations where the truth is hidden and the evidence is noisy.*
 
@@ -118,7 +118,8 @@ Watch Aletheia investigate whether Lovable’s reported revenue growth is suppor
 
 Aletheia is **100% local** — a file copy, nothing published or uploaded. No dependencies:
 the math helper is pure Python standard library, and even Python is optional (the agent
-falls back to inline arithmetic).
+falls back to inline arithmetic). Local-first: the skill, traces, tuning, and audit trail remain on your machine. 
+Web investigation uses your agent harness’s search capabilities.
 
 | Harness | Status |
 |---|---|
