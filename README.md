@@ -29,7 +29,8 @@ and stops only when the evidence has earned an answer — or says **INCONCLUSIVE
 hasn't.
 
 You get back a **Verdict**: a bottom-line call, a plain-English confidence for each claim,
-the evidence with sources, and the residual unknowns it couldn't resolve.
+the evidence with sources, and the residual unknowns it couldn't resolve. Illustrative
+shape (the company is fictional):
 
 ```text
 VERDICT — Acme "$10M ARR / 10,000 paying customers"
@@ -45,6 +46,7 @@ VERDICT — Acme "$10M ARR / 10,000 paying customers"
 - Want more certainty? We can pull hiring/layoff filings and pricing history.
 ```
 
+> [!NOTE]
 > Notice what it *didn't* do: it didn't hide the signal that cut against its conclusion, and
 > it didn't round its uncertainty up to a clean 100%. That restraint is the whole point.
 
@@ -86,6 +88,48 @@ Three engineering choices make it more than a diagram:
 And a first-class outcome most agents lack: a trustworthy **"I don't know."** INCONCLUSIVE is
 a real answer here, not an error — which is what makes the confident answers worth trusting.
 
+## 🚀 Get started (two minutes)
+
+Aletheia is **100% local** — a file copy, nothing published or uploaded. No dependencies:
+the math helper is pure Python standard library, and even Python is optional (the agent
+falls back to inline arithmetic).
+
+| Harness | Status |
+|---|---|
+| **Claude Code** (desktop app or CLI) | ✅ Supported |
+| **OpenAI Codex** | ✅ Supported |
+| **Claude Cowork** | 🚧 Work in progress |
+
+**Claude Code** — clone, copy the skill, ask:
+
+```bash
+git clone https://github.com/nsankar/Aletheia.git
+
+# macOS / Linux
+mkdir -p ~/.claude/skills && cp -r Aletheia/.claude/skills/aletheia ~/.claude/skills/aletheia
+```
+
+```bat
+:: Windows
+robocopy Aletheia\.claude\skills\aletheia "%USERPROFILE%\.claude\skills\aletheia" /E
+```
+
+Then open a **new chat** and ask a plain question — it engages on intent; you never invoke
+anything by name. *(Or skip the copy entirely: open the cloned repo in Claude Code and ask
+right there — the skill ships in-repo.)*
+
+**OpenAI Codex** — point Codex at the self-contained [`codex/AGENTS.md`](codex/AGENTS.md)
+and ask. Same investigator, same protections.
+
+First questions to try:
+
+> *"Acme says it has 10,000 paying customers — is that real?"*
+> *"Is this vendor financially healthy enough to sign a 3-year contract with?"*
+> *"Is our competitor actually growing, or just loud?"*
+
+Full setup — install, first run, query patterns, re-domaining, and self-tuning — is in the
+**[User Guide](docs/USER-GUIDE.md)**.
+
 ## 🌐 Point it at anything uncertain
 
 Companies are the shipped example, not the limit. The machinery — *investigate a hidden
@@ -118,30 +162,8 @@ The guardrails are the feature:
   calibrated* — **never more confident**. A change whose only effect is "sound surer" is
   auto-rejected.
 - Changes are tiny by design, logged to a human-readable ledger, and **everything stays on
-  your machine**. Run it by hand, or make it hands-free with a one-time hook. *(→ User Guide.)*
-
----
-
-## 🚀 Get started
-
-Aletheia is **100% local** — a file copy, nothing published or uploaded. It runs today on:
-
-| Harness | Status |
-|---|---|
-| **Claude Code** (desktop app or CLI) | ✅ Supported |
-| **OpenAI Codex** | ✅ Supported |
-| **Claude Cowork** | 🚧 Work in progress |
-
-**Setup — including install, first run, query patterns, re-domaining, and self-tuning — is in
-the → [User Guide](docs/USER-GUIDE.md).** The 60-second version:
-
-- **Claude Code:** copy `.claude/skills/aletheia/` into `~/.claude/skills/`, open a new chat,
-  and ask a plain question. It engages on intent — you never name a skill.
-- **OpenAI Codex:** point Codex at the self-contained [`codex/AGENTS.md`](codex/AGENTS.md) and
-  ask. Same investigator, same protections.
-
-No dependencies required: the math helper is pure Python standard library (Python is even
-optional — the agent falls back to inline arithmetic).
+  your machine**. Run it by hand, or make it hands-free with a one-time hook.
+  *(→ [User Guide](docs/USER-GUIDE.md).)*
 
 ## 🧠 How it works under the hood
 
@@ -177,6 +199,18 @@ Aletheia/
 - Live web results drift, so judge it on **calibration and evidence quality**, not on any
   single confidence number.
 
+## 🤝 Contributing
+
+Issues and PRs are welcome — Aletheia is MIT-licensed. Three ground rules keep it honest:
+
+- `python -m pytest tests/ -q` must stay green (33 passed + 1 skipped). The suite includes a
+  confidentiality gate on committed artifacts.
+- **Never hand-edit the tunable parameters** (sensor reliabilities and thresholds). They
+  change only through the sanctioned tuning workflow, with a ledger entry — see the
+  [field guide](docs/Aletheia-loop-engg.md).
+- Anything end users see must pass `python tests/leak_scan.py <file>` — verdicts speak
+  business language, never mechanism.
+
 ---
 
 ## 👋 Connect
@@ -190,7 +224,7 @@ uncertainty? I'd love to hear it.
 
 ## 📚 References
 
-- **User Guide** — [USER-GUIDE.md](docs/USER-GUIDE.md) · setup and usage for Claude Code & Codex
+- **User Guide** — [docs/USER-GUIDE.md](docs/USER-GUIDE.md) · setup and usage for Claude Code & Codex
 - **The design** — [POMDP-Loop Agentic Blueprint](docs/POMDP-Loop-Agentic-Blueprint.md)
 - **Loop engineering & tuning** — [Aletheia-loop-engg.md](docs/Aletheia-loop-engg.md) ·
   [auto-tuner proposal](docs/auto-tuner-workflow-proposal.md) ·
